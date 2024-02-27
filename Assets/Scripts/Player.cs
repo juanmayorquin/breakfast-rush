@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int score;
-    public string name;
+    public string playerName;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     public void saveName(string playerName)
     {
-        name = playerName;
+        this.playerName = playerName;
     }
 
     public void earnPoints(int points)
