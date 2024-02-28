@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
+    public string foodName;
+    private Sprite sprite;
     private Transform dragging = null;
     private Vector3 offset;
     private Rigidbody2D rb;
+    [SerializeField] private bool isClonable;
+    
+    private RecipeManager recipeManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = rb.GetComponent<Sprite>();
+        recipeManager = GameObject.FindObjectOfType<RecipeManager>();
     }
 
     // Update is called once per frame
@@ -24,8 +31,19 @@ public class FoodItem : MonoBehaviour
 
             if (hit)
             {
-                dragging = hit.transform;
-                offset = dragging.position - UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (hit.transform.gameObject.CompareTag("Clone"))
+                {
+                    // Iniciar el arrastre del clon
+                    dragging = hit.transform;
+                    offset = dragging.position - UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                }
+                else
+                {
+                    GameObject clone = Instantiate(hit.transform.gameObject, hit.transform.position, hit.transform.rotation);
+                    clone.tag = "Clone";
+                    dragging = clone.transform;
+                    offset = dragging.position - UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                }
             }
         }
         else if (Input.GetMouseButtonUp(0))
@@ -40,11 +58,22 @@ public class FoodItem : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("bread") && gameObject.CompareTag("ham"))
+        if (collision.gameObject.GetComponent<FoodItem>())
         {
-
+            Debug.Log("Colisión");
+            if (collision.gameObject.CompareTag("Clone") && gameObject.CompareTag("Clone"))
+            {
+                FoodItem result = recipeManager.FindRecipeResult(gameObject.GetComponent<FoodItem>(), collision.gameObject.GetComponent<FoodItem>());
+                Debug.Log(result);
+                if (result != null)
+                {
+                    Instantiate(result, collision.transform);
+                    Destroy(collision.gameObject);
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }
