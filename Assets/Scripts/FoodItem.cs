@@ -5,10 +5,11 @@ using UnityEngine;
 public class FoodItem : MonoBehaviour
 {
     public string foodName;
-    private Sprite sprite;
     private Transform dragging = null;
     private Vector3 offset;
     private Rigidbody2D rb;
+
+    [SerializeField] private Sprite sprite;
     [SerializeField] private bool isClonable;
     
     private RecipeManager recipeManager;
@@ -62,14 +63,13 @@ public class FoodItem : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<FoodItem>())
         {
-            Debug.Log("Colisión");
             if (collision.gameObject.CompareTag("Clone") && gameObject.CompareTag("Clone"))
             {
                 FoodItem result = recipeManager.FindRecipeResult(gameObject.GetComponent<FoodItem>(), collision.gameObject.GetComponent<FoodItem>());
-                Debug.Log(result);
                 if (result != null)
                 {
-                    Instantiate(result, collision.transform);
+                    Debug.Log(result.sprite);
+                    Instantiate(result.gameObject, collision.transform);
                     Destroy(collision.gameObject);
                     Destroy(gameObject);
                 }

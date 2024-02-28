@@ -10,8 +10,8 @@ public class RecipeManager : MonoBehaviour
         FoodItem result = null;
         foreach (var recipe in FoodRecipes)
         {
-            if (((recipe.recipe[0].Equals(item1) && recipe.recipe[1].Equals(item2)) ||
-                (recipe.recipe[0].Equals(item2)  && recipe.recipe[1].Equals(item1))))
+            if (((recipe.recipe[0].foodName.Equals(item1.foodName) && recipe.recipe[1].foodName.Equals(item2.foodName)) ||
+                (recipe.recipe[0].foodName.Equals(item2.foodName)  && recipe.recipe[1].foodName.Equals(item1.foodName))))
             {
                 result = recipe.result;
             }
