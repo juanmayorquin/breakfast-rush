@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3188284415959062934}
   - component: {fileID: 8589613915654649402}
   m_Layer: 0
-  m_Name: sandwichRecipe
+  m_Name: pan-huevo-recipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
   - {fileID: 3273862715150757638, guid: b9154ebbf6f41324c80985b0a4065605, type: 3}
-  - {fileID: 5631349469769960388, guid: 2c4442e0814be4e458f8dd847bbe0870, type: 3}
-  result: {fileID: -397291677731253921, guid: 12240d1b587637d4cb50f25b74fd43a3, type: 3}
+  - {fileID: 5215345474935541241, guid: 21d98dd2a88e67d48bf1b7df0cc1d1f7, type: 3}
+  result: {fileID: 7898495547903134588, guid: 064ff3c0ef65dce4c98b14299095f2d8, type: 3}

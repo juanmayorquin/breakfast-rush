@@ -5,7 +5,7 @@ using UnityEngine;
 public class FoodRecipe : MonoBehaviour
 {
     public FoodItem[] recipe = new FoodItem[2];
-    public FoodItem result;
+    public GameObject result;
 
     public FoodRecipe(FoodItem item1, FoodItem item2)
     {
