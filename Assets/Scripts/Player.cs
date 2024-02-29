@@ -46,14 +46,25 @@ public class Player : MonoBehaviour
 
     public void generateNewOrder()
     {
-        order = foodRecipes[Random.Range(0, foodRecipes.Count)];
+        GameObject newOrder = foodRecipes[Random.Range(0, foodRecipes.Count)];
+
+        if (!newOrder.GetComponent<FoodItem>().foodName.Equals(order.GetComponent<FoodItem>().foodName))
+        {
+            order = newOrder;
+        }
+        else
+        {
+            generateNewOrder();
+        }
+
         //Debug.Log(order.name);
     }
 
     public void gameOver()
     {
         Leaderboard.currentPlayerScore = score;
-        Leaderboard.savePlayer();
+        this.playerName = Leaderboard.currentPlayerName;
+        Leaderboard.savePlayer(this);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Final");
     }
 

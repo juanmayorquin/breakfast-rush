@@ -8,12 +8,8 @@ public static class Leaderboard
     public static string currentPlayerName = "";
     public static int currentPlayerScore = 0;   
 
-    public static void savePlayer()
+    public static void savePlayer(Player player)
     {
-        Player player = new Player();
-        player.name = currentPlayerName;
-        player.score = currentPlayerScore;
-
         int index = PlayerList.FindIndex(p => p.score <= player.score);
 
         if (index == -1)

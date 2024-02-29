@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     {
         timer = 45;
         timerText = GetComponent<TextMeshProUGUI>();
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player = FindObjectOfType<Player>();
     }
 
     void Update()
