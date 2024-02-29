@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer orderGUI;
 
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private GameObject gameOverScreen, nameScreen;
 
 
     public int score;
@@ -22,8 +21,6 @@ public class Player : MonoBehaviour
     {
         orderGUI.sprite = null;
         order = foodRecipes[Random.Range(0, foodRecipes.Count)];
-        gameOverScreen.SetActive(false);
-        nameScreen.SetActive(true);
 
         playerName = "";
         score = 0;
@@ -55,18 +52,8 @@ public class Player : MonoBehaviour
 
     public void gameOver()
     {
-        gameOverScreen.SetActive(true);
-        Leaderboard.savePlayer(this);
+        Leaderboard.currentPlayerScore = score;
+        Leaderboard.savePlayer();
     }
 
-    public void Restart()
-    {
-        orderGUI.sprite = null;
-        order = foodRecipes[Random.Range(0, foodRecipes.Count)];
-        gameOverScreen.SetActive(false);
-        nameScreen.SetActive(false);
-
-        playerName = "";
-        score = 0;
-    }
 }
