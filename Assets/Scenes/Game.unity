@@ -544,6 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637914175}
   - component: {fileID: 637914174}
+  - component: {fileID: 637914176}
   m_Layer: 0
   m_Name: RecipeManager
   m_TagString: Untagged
@@ -587,6 +588,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &637914176
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637914173}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 346fccf5241bfcf4ca6564376fa45b11, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &776816167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1014318796395237231, guid: c0e6de99813a5494fba1d1a48f8f3e41, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 637914176}
     - target: {fileID: 7809051199544525139, guid: c0e6de99813a5494fba1d1a48f8f3e41, type: 3}
       propertyPath: m_Name
       value: queso
@@ -1841,6 +1942,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3273862715150757638, guid: b9154ebbf6f41324c80985b0a4065605, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 637914176}
     - target: {fileID: 3780203145146223393, guid: b9154ebbf6f41324c80985b0a4065605, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.119064
@@ -1970,6 +2075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jamon
       objectReference: {fileID: 0}
+    - target: {fileID: 5631349469769960388, guid: 2c4442e0814be4e458f8dd847bbe0870, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 637914176}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2035,6 +2144,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2211695363987544249, guid: f3e006c83d2c7e64482c37e9e0529248, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 637914176}
     - target: {fileID: 5119646253677107423, guid: f3e006c83d2c7e64482c37e9e0529248, type: 3}
       propertyPath: m_Name
       value: tomate
@@ -2056,6 +2169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: huevos
       objectReference: {fileID: 0}
+    - target: {fileID: 5215345474935541241, guid: 21d98dd2a88e67d48bf1b7df0cc1d1f7, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 637914176}
     - target: {fileID: 7526056851252419228, guid: 21d98dd2a88e67d48bf1b7df0cc1d1f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1270016

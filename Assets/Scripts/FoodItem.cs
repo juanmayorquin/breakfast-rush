@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
+    public AudioSource pop;
     public string foodName;
     private Transform dragging = null;
     private Vector3 offset;
@@ -68,6 +69,7 @@ public class FoodItem : MonoBehaviour
                 {
                     //Debug.Log("Se ha creado: " + result.name);
                     Instantiate(result, gameObject.transform.position, Quaternion.identity);
+                    pop.Play();
                     Destroy(collision.gameObject);
                     Destroy(gameObject);
                 }
