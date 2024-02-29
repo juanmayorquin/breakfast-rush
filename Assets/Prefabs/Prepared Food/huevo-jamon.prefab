@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodName: eggs-ham
-  isClonable: 0
+  isRecipe: 1

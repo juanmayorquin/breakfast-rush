@@ -6,7 +6,7 @@ public static class Leaderboard
 {
     public static List<Player> PlayerList = new List<Player>();
 
-    public static void addPlayer(Player player)
+    public static void savePlayer(Player player)
     {
         int index = PlayerList.FindIndex(p => p.score <= player.score);
 

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodName: eggs-tomato
-  isClonable: 0
+  isRecipe: 1
 --- !u!61 &1048333786999632605
 BoxCollider2D:
   m_ObjectHideFlags: 0

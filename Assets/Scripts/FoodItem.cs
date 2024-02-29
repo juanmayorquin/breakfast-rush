@@ -9,8 +9,7 @@ public class FoodItem : MonoBehaviour
     private Vector3 offset;
     private Rigidbody2D rb;
 
-    private Sprite sprite;
-    [SerializeField] private bool isClonable;
+    public bool isRecipe;
     
     private RecipeManager recipeManager;
 
@@ -18,8 +17,7 @@ public class FoodItem : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = rb.GetComponent<SpriteRenderer>().sprite;
-        recipeManager = GameObject.FindObjectOfType<RecipeManager>();
+        recipeManager = FindObjectOfType<RecipeManager>();
     }
 
     // Update is called once per frame
@@ -68,7 +66,7 @@ public class FoodItem : MonoBehaviour
                 GameObject result = recipeManager.FindRecipeResult(gameObject.GetComponent<FoodItem>(), collision.gameObject.GetComponent<FoodItem>());
                 if (result != null)
                 {
-                    Debug.Log("Resultado: " + result.name);
+                    //Debug.Log("Se ha creado: " + result.name);
                     Instantiate(result, gameObject.transform.position, Quaternion.identity);
                     Destroy(collision.gameObject);
                     Destroy(gameObject);

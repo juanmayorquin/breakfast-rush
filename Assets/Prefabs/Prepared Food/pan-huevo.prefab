@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodName: bread-egg
-  isClonable: 0
+  isRecipe: 1
 --- !u!61 &4500107440731298389
 BoxCollider2D:
   m_ObjectHideFlags: 0

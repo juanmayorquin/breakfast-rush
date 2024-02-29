@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodName: wrap
-  isClonable: 0
+  isRecipe: 1
 --- !u!61 &6297178758528096492
 BoxCollider2D:
   m_ObjectHideFlags: 0

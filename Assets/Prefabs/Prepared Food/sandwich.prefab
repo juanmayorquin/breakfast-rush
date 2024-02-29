@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodName: sandwich
-  sprite: {fileID: 21300000, guid: 58cbabfb00a013549bc1f309018a4395, type: 3}
-  isClonable: 0
+  isRecipe: 1
 --- !u!50 &-3476674525301455756
 Rigidbody2D:
   serializedVersion: 4
