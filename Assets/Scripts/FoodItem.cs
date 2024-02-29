@@ -68,8 +68,8 @@ public class FoodItem : MonoBehaviour
                 if (result != null)
                 {
                     //Debug.Log("Se ha creado: " + result.name);
-                    Instantiate(result, gameObject.transform.position, Quaternion.identity);
                     pop.Play();
+                    Instantiate(result, gameObject.transform.position, Quaternion.identity);
                     Destroy(collision.gameObject);
                     Destroy(gameObject);
                 }

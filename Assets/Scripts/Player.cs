@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
     public void earnPoints(int points)
     {
         score += points;
-        Debug.Log(score);
     }
 
     public void generateNewOrder()
@@ -56,15 +55,13 @@ public class Player : MonoBehaviour
         {
             generateNewOrder();
         }
-
-        //Debug.Log(order.name);
     }
 
     public void gameOver()
     {
         Leaderboard.currentPlayerScore = score;
         this.playerName = Leaderboard.currentPlayerName;
-        Leaderboard.savePlayer(this);
+        Leaderboard.savePlayer(GetComponent<Player>());
         UnityEngine.SceneManagement.SceneManager.LoadScene("Final");
     }
 

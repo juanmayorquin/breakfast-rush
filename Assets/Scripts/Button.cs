@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,14 +8,14 @@ public class Button : MonoBehaviour
 {
     private string playerName;
 
-    public void startGame()
+    public void startGame(TextMeshProUGUI playerInput)
     {
-        savePlayerName();
-        loadScene("Game");
+        savePlayerName(playerInput.text);
+        loadScene("Instrucciones");
     }
-    private void savePlayerName()
+    private void savePlayerName(string playerName)
     {
-        playerName = GameObject.Find("InputField").GetComponent<UnityEngine.UI.InputField>().text;
+        this.playerName = playerName;
         Leaderboard.currentPlayerName = playerName;
     }
 

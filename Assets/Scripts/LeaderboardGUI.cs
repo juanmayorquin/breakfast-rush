@@ -11,14 +11,16 @@ public class LeaderboardGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Leaderboard.PlayerList.Count > 0)
+        for (int i = 0; i < Leaderboard.PlayerList.Count; i++)
         {
-            for (int i = 0; i < 5; i++)
+            if(i > 5)
             {
-                names[i].text = Leaderboard.PlayerList[i].name;
-                scores[i].text = Leaderboard.PlayerList[i].score.ToString();
-            }   
-        }
+                i = 5;
+                break;
+            }
+            names[i].text = Leaderboard.PlayerList[i].playerName;
+            scores[i].text = Leaderboard.PlayerList[i].score.ToString();
+        }   
     }
 
     // Update is called once per frame

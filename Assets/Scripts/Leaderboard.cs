@@ -6,7 +6,7 @@ public static class Leaderboard
 {
     public static List<Player> PlayerList = new List<Player>();
     public static string currentPlayerName = "";
-    public static int currentPlayerScore = 0;   
+    public static int currentPlayerScore = 0;
 
     public static void savePlayer(Player player)
     {

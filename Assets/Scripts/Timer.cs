@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        timer = 45;
+        timer = 10;
         timerText = GetComponent<TextMeshProUGUI>();
         player = FindObjectOfType<Player>();
     }
