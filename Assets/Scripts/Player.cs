@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     {
         Leaderboard.currentPlayerScore = score;
         Leaderboard.savePlayer();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Final");
     }
 
 }
